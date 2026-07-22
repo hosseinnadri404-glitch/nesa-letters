@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nesa Letters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<div id="intro">
+
+<h1>برای نسا ❤️</h1>
+
+<p>
+از میان تمام حرف‌هایی که نگفته ماند،
+این چند صفحه را برای تو نوشتم...
+<br>
+شاید روزی در آرام‌ترین لحظه‌ها،
+صدای قلبم را از میان این کلمات بشنوی.
+</p>
+
+<button onclick="enterLetters()">
+ورود به نامه‌ها
+</button>
+
+</div>
+
+<div id="transition">
+
+    <h2>
+        بعضی حرف‌ها را فقط می‌شود نوشت...
+    </h2>
+
+</div>
+
+
+<div id="letters" class="letters" style="display:none;">
+
+<h1>نامه‌های من برای نسا ❤️</h1>
+
+        <button onclick="openLetter(1)">
+            اصالت عشق من
+        </button>
+
+        <button onclick="openLetter(2)">
+            وقتی جهان خسته‌ات کرد
+        </button>
+
+        <button onclick="openLetter(3)">
+            اگر خواستی که بمانی
+        </button>
+
+        <button onclick="openLetter(4)">
+            آن هنگام که صدای قلبم را بشنوی
+        </button>
+
+        <button onclick="openLetter(5)">
+            آنچه از جانم برآید
+        </button>
+
+        <button onclick="openLetter(6)">
+            آخرین دفاع و ایستادگی این عاشق
+        </button>
+
+    </div>
+
+
+    <div id="letterPage" class="letter-page">
+
+        <h2 id="letterTitle"></h2>
+
+        <div id="letterText"></div>
+
+
+        <button onclick="back()">
+            بازگشت به نامه‌ها
+        </button>
+
+    </div>
+
+
+</div>
+
+<audio id="bgMusic" loop>
+
+    <source src="music/music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<button id="musicBtn">
+🎵 پخش موسیقی
+</button>
+
+
+<script src="letters.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

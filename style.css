@@ -1,0 +1,608 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #160b11,
+        #3b1f2b,
+        #10080c
+    );
+
+    color:#f8e9e9;
+
+    font-family:"Vazirmatn", serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/* نورهای آرام سینمایی */
+
+body::before {
+
+    content:"";
+
+    position:fixed;
+
+    width:550px;
+
+    height:550px;
+
+    top:-180px;
+
+    right:-180px;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,120,160,.22),
+        transparent 70%
+    );
+
+    filter:blur(20px);
+
+    z-index:-1;
+
+    animation:glowMove 10s infinite alternate;
+
+}
+
+
+body::after {
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    bottom:-150px;
+
+    left:-150px;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,220,150,.15),
+        transparent 70%
+    );
+
+    filter:blur(25px);
+
+    z-index:-1;
+
+    animation:glowMove 12s infinite alternate-reverse;
+
+}
+
+
+@keyframes glowMove {
+
+    from {
+
+        transform:translate(0,0);
+
+    }
+
+    to {
+
+        transform:translate(50px,30px);
+
+    }
+
+}
+
+
+
+.container {
+
+    width:90%;
+
+    max-width:850px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+}
+
+
+
+/* صفحه اول */
+
+#intro {
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:fadeIn 1.8s ease;
+
+}
+
+
+
+h1 {
+
+    font-size:35px;
+
+    margin-bottom:40px;
+
+    color:#ffd6df;
+
+    text-shadow:
+
+    0 0 15px rgba(255,150,170,.5);
+
+}
+
+
+
+#intro h1 {
+
+    font-size:55px;
+
+}
+
+
+
+#intro p {
+
+    max-width:650px;
+
+    font-size:22px;
+
+    line-height:2.5;
+
+    color:#f8dede;
+
+    margin:30px 0 50px;
+
+}
+
+
+
+
+/* دکمه ها */
+
+button {
+
+    width:100%;
+
+    margin:15px 0;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #8b3148,
+        #5c2032
+    );
+
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.35);
+
+}
+
+
+
+button:hover {
+
+    transform:translateY(-5px);
+
+    background:#a63d57;
+
+}
+
+
+
+#intro button {
+
+    width:260px;
+
+    font-size:20px;
+
+}
+
+
+
+
+/* لیست نامه ها */
+
+.letters button {
+
+    animation:showButtons .7s ease;
+
+}
+
+
+
+@keyframes showButtons {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateX(30px);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+
+}
+
+
+
+
+/* صفحه نامه */
+
+.letter-page {
+
+    display:none;
+
+    background:
+
+    rgba(255,255,255,.09);
+
+
+    padding:35px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(12px);
+
+
+    text-align:right;
+
+    line-height:2.4;
+
+    font-size:19px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.45);
+
+
+    animation:openLetter .9s ease;
+
+}
+
+
+
+
+#letterTitle {
+
+    text-align:center;
+
+    font-size:30px;
+
+    color:#ffd1d1;
+
+    margin-bottom:30px;
+
+    animation:fadeTitle 1s ease;
+
+}
+
+
+
+#letterText {
+
+    white-space:pre-line;
+
+    animation:textAppear 1.5s ease;
+
+}
+
+
+
+@keyframes openLetter {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateY(30px) scale(.96);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+}
+
+
+}
+
+
+
+@keyframes fadeTitle {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateY(-15px);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+@keyframes textAppear {
+
+
+from {
+
+    opacity:0;
+
+}
+
+
+to {
+
+    opacity:1;
+
+}
+
+
+}
+
+
+
+@keyframes fadeIn {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+/* اسکرول نامه */
+
+.letter-page::-webkit-scrollbar {
+
+    width:8px;
+
+}
+
+
+.letter-page::-webkit-scrollbar-thumb {
+
+    background:#a63d57;
+
+    border-radius:20px;
+
+}
+
+
+
+/* لپتاپ */
+
+@media(min-width:1000px){
+
+
+.container {
+
+    max-width:900px;
+
+}
+
+
+.letter-page {
+
+    font-size:21px;
+
+    padding:45px;
+
+}
+
+
+}
+
+
+
+/* موبایل */
+
+@media(max-width:600px){
+
+
+h1 {
+
+    font-size:28px;
+
+}
+
+
+#intro h1 {
+
+    font-size:38px;
+
+}
+
+
+#intro p {
+
+    font-size:18px;
+
+}
+
+
+.letter-page {
+
+    padding:20px;
+
+    font-size:17px;
+
+}
+
+
+}
+.signature {
+
+    margin-top:50px;
+
+    padding-top:30px;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.2);
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#ffd6df;
+
+    opacity:.9;
+
+    animation:signatureShow 2s ease;
+
+}
+
+
+@keyframes signatureShow {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.final-image {
+
+    text-align:center;
+
+    margin-top:50px;
+
+}
+
+
+.final-image img {
+
+    width:320px;
+
+    max-width:90%;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.5);
+
+    animation:photoShow 2s ease;
+
+}
+
+
+@keyframes photoShow {
+
+    from {
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
