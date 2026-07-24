@@ -285,3 +285,22 @@ function backFinal(){
     letters.style.display="block";
 
 }
+function openPoems(){
+
+    document.getElementById("intro").style.display="none";
+
+    document.getElementById("letters").style.display="none";
+
+    document.getElementById("poemsPage").style.display="block";
+
+}
+
+
+
+function backPoems(){
+
+    document.getElementById("poemsPage").style.display="none";
+
+    document.getElementById("intro").style.display="flex";
+
+}
