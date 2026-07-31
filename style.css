@@ -1,754 +1,329 @@
+/* ===============================
+   RESET & BASE
+================================ */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
 
 body {
-
-    margin: 0;
-
     min-height: 100vh;
-
-    background:
-    linear-gradient(
-        135deg,
-        #160b11,
-        #3b1f2b,
-        #10080c
-    );
-
-    color:#f8e9e9;
-
-    font-family:"Vazirmatn", serif;
-
-    overflow-x:hidden;
-
+    background: linear-gradient(135deg, #11050a, #2a111c, #0a0406);
+    color: #fdf5f5;
+    font-family: "Vazirmatn", serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-
-/* نورهای آرام سینمایی */
-
+/* ===============================
+   CINEMATIC GLOW (BACKGROUND)
+================================ */
 body::before {
-
-    content:"";
-
-    position:fixed;
-
-    width:550px;
-
-    height:550px;
-
-    top:-180px;
-
-    right:-180px;
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(255,120,160,.22),
-        transparent 70%
-    );
-
-    filter:blur(20px);
-
-    z-index:-1;
-
-    animation:glowMove 10s infinite alternate;
-
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(220, 80, 120, 0.15), transparent 70%);
+    filter: blur(30px);
+    z-index: -1;
+    animation: glowMove 12s infinite alternate ease-in-out;
 }
-
 
 body::after {
-
-    content:"";
-
-    position:fixed;
-
-    width:450px;
-
-    height:450px;
-
-    bottom:-150px;
-
-    left:-150px;
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(255,220,150,.15),
-        transparent 70%
-    );
-
-    filter:blur(25px);
-
-    z-index:-1;
-
-    animation:glowMove 12s infinite alternate-reverse;
-
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(255, 180, 120, 0.12), transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    animation: glowMove 15s infinite alternate-reverse ease-in-out;
 }
-
 
 @keyframes glowMove {
-
-    from {
-
-        transform:translate(0,0);
-
-    }
-
-    to {
-
-        transform:translate(50px,30px);
-
-    }
-
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(40px, -40px) scale(1.1); }
 }
 
-
-
+/* ===============================
+   LAYOUT & CONTAINER
+================================ */
 .container {
-
-    width:90%;
-
-    max-width:850px;
-
-    margin:50px auto;
-
-    text-align:center;
-
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
 }
 
-
-
-/* صفحه اول */
+/* ===============================
+   TYPOGRAPHY
+================================ */
+h1, h2 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
 
 #intro {
-
-    min-height:70vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    animation:fadeIn 1.8s ease;
-
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-out;
 }
-
-
-
-h1 {
-
-    font-size:35px;
-
-    margin-bottom:40px;
-
-    color:#ffd6df;
-
-    text-shadow:
-
-    0 0 15px rgba(255,150,170,.5);
-
-}
-
-
 
 #intro h1 {
-
-    font-size:55px;
-
+    font-size: 60px;
+    margin-bottom: 25px;
+    color: #ffd6df;
+    text-shadow: 0 0 25px rgba(255, 150, 170, 0.6);
 }
-
-
 
 #intro p {
-
-    max-width:650px;
-
-    font-size:22px;
-
-    line-height:2.5;
-
-    color:#f8dede;
-
-    margin:30px 0 50px;
-
+    max-width: 650px;
+    font-size: 20px;
+    line-height: 2.2;
+    color: #fce8e8;
+    margin: 20px 0 50px;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
-
-
-
-/* دکمه ها */
-
+/* ===============================
+   BUTTONS
+================================ */
 button {
-
-    width:100%;
-
-    margin:15px 0;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #8b3148,
-        #5c2032
-    );
-
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.35);
-
+    width: 100%;
+    margin: 12px 0;
+    padding: 18px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(145, 45, 75, 0.8), rgba(90, 25, 45, 0.8));
+    backdrop-filter: blur(5px);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
-
 
 button:hover {
-
-    transform:translateY(-5px);
-
-    background:#a63d57;
-
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, rgba(165, 55, 85, 0.9), rgba(110, 35, 55, 0.9));
+    box-shadow: 0 15px 30px rgba(165, 55, 85, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
-
-
 
 #intro button {
-
-    width:260px;
-
-    font-size:20px;
-
+    width: 280px;
+    font-size: 19px;
 }
 
+/* ===============================
+   MUSIC CONTROLS (Dual)
+================================ */
+.music-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
 
+.music-btn {
+    width: auto;
+    margin: 0;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 30px;
+    background: rgba(25, 10, 15, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
 
+.music-btn:hover {
+    background: rgba(165, 55, 85, 0.8);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
 
-/* لیست نامه ها */
-
+/* ===============================
+   LETTERS SECTION (Glassmorphism)
+================================ */
 .letters button {
-
-    animation:showButtons .7s ease;
-
+    animation: showButtons 0.8s backwards ease-out;
 }
 
-
-
-@keyframes showButtons {
-
-
-from {
-
-    opacity:0;
-
-    transform:translateX(30px);
-
-}
-
-
-to {
-
-    opacity:1;
-
-    transform:translateX(0);
-
-}
-
-
-}
-
-
-
-
-/* صفحه نامه */
+.letters button:nth-child(2) { animation-delay: 0.1s; }
+.letters button:nth-child(3) { animation-delay: 0.2s; }
+.letters button:nth-child(4) { animation-delay: 0.3s; }
+.letters button:nth-child(5) { animation-delay: 0.4s; }
+.letters button:nth-child(6) { animation-delay: 0.5s; }
+.letters button:nth-child(7) { animation-delay: 0.6s; }
 
 .letter-page {
-
-    display:none;
-
-    background:
-
-    rgba(255,255,255,.09);
-
-
-    padding:35px;
-
-    border-radius:25px;
-
-    backdrop-filter:blur(12px);
-
-
-    text-align:right;
-
-    line-height:2.4;
-
-    font-size:19px;
-
-
-    box-shadow:
-
-    0 20px 50px rgba(0,0,0,.45);
-
-
-    animation:openLetter .9s ease;
-
+    display: none;
+    background: rgba(25, 10, 15, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 45px;
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    text-align: right;
+    line-height: 2.4;
+    font-size: 19px;
+    font-weight: 300;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: openLetter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
-
-
-#letterTitle {
-
-    text-align:center;
-
-    font-size:30px;
-
-    color:#ffd1d1;
-
-    margin-bottom:30px;
-
-    animation:fadeTitle 1s ease;
-
+#letterTitle, #poemTitle {
+    text-align: center;
+    font-size: 28px;
+    color: #ffb6c1;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
+    animation: fadeTitle 1s ease-out;
 }
-
-
 
 #letterText {
-
-    white-space:pre-line;
-
-    animation:textAppear 1.5s ease;
-
+    white-space: pre-line;
+    color: #f9ebeb;
+    animation: textAppear 1.5s ease-out;
 }
 
+/* ===============================
+   POEMS SECTION
+================================ */
+#poemTitle::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, transparent, #b77b8c, transparent);
+}
 
+#poemText {
+    white-space: pre-line;
+    text-align: center;
+    line-height: 2.8;
+    font-size: 21px;
+    color: #fce8e8;
+    padding: 15px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ===============================
+   FINAL PAGE
+================================ */
+#finalPage h2 {
+    text-align: center;
+    color: #ffb6c1;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+#finalText {
+    white-space: pre-line;
+    text-align: right;
+    line-height: 2.4;
+    font-size: 20px;
+    color: #f9ebeb;
+}
+
+#finalPage button {
+    background: linear-gradient(135deg, rgba(160, 115, 50, 0.8), rgba(110, 75, 30, 0.8));
+    margin-top: 30px;
+}
+
+#finalPage button:hover {
+    background: linear-gradient(135deg, rgba(180, 130, 60, 0.9), rgba(130, 90, 40, 0.9));
+    box-shadow: 0 15px 30px rgba(160, 115, 50, 0.3);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes showButtons {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
 
 @keyframes openLetter {
-
-
-from {
-
-    opacity:0;
-
-    transform:translateY(30px) scale(.96);
-
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
-
-to {
-
-    opacity:1;
-
-    transform:translateY(0) scale(1);
-
-}
-
-
-}
-
-
 
 @keyframes fadeTitle {
-
-
-from {
-
-    opacity:0;
-
-    transform:translateY(-15px);
-
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-
-to {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-}
-
-
 
 @keyframes textAppear {
-
-
-from {
-
-    opacity:0;
-
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-
-
-to {
-
-    opacity:1;
-
-}
-
-
-}
-
-
 
 @keyframes fadeIn {
-
-
-from {
-
-    opacity:0;
-
-    transform:translateY(30px);
-
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-
-to {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-}
-
-
-
-/* اسکرول نامه */
-
-.letter-page::-webkit-scrollbar {
-
-    width:8px;
-
-}
-
-
-.letter-page::-webkit-scrollbar-thumb {
-
-    background:#a63d57;
-
-    border-radius:20px;
-
-}
-
-
-
-/* لپتاپ */
-
-@media(min-width:1000px){
-
-
-.container {
-
-    max-width:900px;
-
-}
-
-
-.letter-page {
-
-    font-size:21px;
-
-    padding:45px;
-
-}
-
-
-}
-
-
-
-/* موبایل */
-
-@media(max-width:600px){
-
-
-h1 {
-
-    font-size:28px;
-
-}
-
-
-#intro h1 {
-
-    font-size:38px;
-
-}
-
-
-#intro p {
-
-    font-size:18px;
-
-}
-
-
-.letter-page {
-
-    padding:20px;
-
-    font-size:17px;
-
-}
-
-
-}
-.signature {
-
-    margin-top:50px;
-
-    padding-top:30px;
-
-    border-top:
-
-    1px solid rgba(255,255,255,.2);
-
-    text-align:center;
-
-    font-size:18px;
-
-    color:#ffd6df;
-
-    opacity:.9;
-
-    animation:signatureShow 2s ease;
-
-}
-
-
-@keyframes signatureShow {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-.final-image {
-
-    text-align:center;
-
-    margin-top:50px;
-
-}
-
-
-.final-image img {
-
-    width:320px;
-
-    max-width:90%;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.5);
-
-    animation:photoShow 2s ease;
-
-}
-
-
-@keyframes photoShow {
-
-    from {
-
-        opacity:0;
-
-        transform:scale(.8);
-
-    }
-
-    to {
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-#poemsPage{
-
-    animation:openLetter .8s ease;
-
-}
-
-
-#poemsText{
-
-    text-align:right;
-
-    line-height:2.5;
-
-    font-size:20px;
-
-    color:#f5dddd;
-
-}
-#poemText{
-
-    white-space:pre-line;
-
-    text-align:right;
-
-    line-height:2.5;
-
-    font-size:20px;
-
-    color:#f5dddd;
-
-}
-
-
-.poems button{
-
-    animation:showButtons .6s ease;
-
-}
 /* ===============================
-   POEMS STYLE
+   SCROLLBAR
 ================================ */
-
-
-#poemPage{
-
-    animation:openLetter .8s ease;
-
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #11050a; 
+}
+::-webkit-scrollbar-thumb {
+    background: #6b1d33;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9b2b46;
 }
 
-
-
-#poemTitle{
-
-    text-align:center;
-
-    color:#8b4055;
-
-    font-size:32px;
-
-    margin-bottom:35px;
-
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (min-width: 1000px) {
+    .container { max-width: 850px; }
+    .letter-page { padding: 55px 65px; font-size: 20px; }
 }
 
-
-
-#poemTitle::after{
-
-    content:"";
-
-    display:block;
-
-    width:120px;
-
-    height:2px;
-
-    margin:15px auto;
-
-    background:#b77b8c;
-
-}
-
-
-
-
-#poemText{
-
-    white-space:pre-line;
-
-    text-align:center;
-
-    line-height:3;
-
-    font-size:22px;
-
-    color:#14090d;
-
-    padding:25px;
-
-    font-style:italic;
-
-    font-weight:500;
-
-    text-shadow:
-
-    0 1px 2px rgba(0,0,0,.15);
-
-}
-#finalPage{
-
-    animation:openLetter .9s ease;
-
-}
-
-
-
-#finalText{
-
-    white-space:pre-line;
-
-    text-align:right;
-
-    line-height:2.8;
-
-    font-size:20px;
-
-    color:#14090d;
-
-}
-#finalPage button{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #b38b4d,
-        #795b2d
-    );
-
-}
-
-
-#finalPage h2{
-
-    color:#8b4055;
-
+@media (max-width: 600px) {
+    .container { margin: 30px auto; width: 92%; }
+    #intro h1 { font-size: 45px; }
+    #intro p { font-size: 17px; }
+    #letterTitle, #poemTitle { font-size: 24px; }
+    .letter-page { padding: 25px 20px; font-size: 17px; border-radius: 18px; }
+    button { font-size: 16px; padding: 15px; }
+    .music-controls {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+    .music-btn {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }

@@ -2,242 +2,128 @@
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nesa Letters</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesa Letters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <!-- بخش موسیقی‌های پس‌زمینه -->
+    <div class="music-controls">
+        <audio id="bgMusic1" loop>
+            <source src="music/music1.mp3" type="audio/mpeg">
+        </audio>
+        
+        <audio id="bgMusic2" loop>
+            <source src="music/music2.mp3" type="audio/mpeg">
+        </audio>
 
-
-<div id="intro">
-
-<h1>برای نسا ❤️</h1>
-
-<p>
-بخوان شیرین‌ترین بهانه‌ام، باید بشنوی و بدانی که تا چه میزان معنای عشقی...
-<br>
-</p>
-
-<button onclick="openVoice()">
-🎧 صدای تقدیمی
-</button>
-
-
-<button onclick="openLetters()">
-💌 نامه‌ها
-</button>
-
-
-<button onclick="openPoems()">
-✒️ اشعار تقدیمی
-</button>
-
-
-<button onclick="openFinal()">
-❤️ وقتی همه نامه‌ها را خواندی
-</button>
-</div>
-
-<div id="transition">
-
-    <h2>
-        صدایم بزن، که شاید زمستان من سر آید...
-    </h2>
-
-</div>
-
-
-<div id="letters" class="letters" style="display:none;">
-
-<h1>نامه‌های من برای نسا ❤️</h1>
-
-        <button onclick="openLetter(1)">
-            اصالت عشق من
-        </button>
-
-        <button onclick="openLetter(2)">
-            وقتی جهان خسته‌ات کرد
-        </button>
-
-        <button onclick="openLetter(3)">
-            اگر خواستی که بمانی
-        </button>
-
-        <button onclick="openLetter(4)">
-            آن هنگام که صدای قلبم را بشنوی
-        </button>
-
-        <button onclick="openLetter(5)">
-            آنچه از جانم برآید
-        </button>
-
-        <button onclick="openLetter(6)">
-            آخرین دفاع و ایستادگی این عاشق
-        </button>
-<button onclick="openFinal()">
-اگر تا اینجا همراه من بودی... ❤️
-</button>
-
+        <button id="musicBtn1" class="music-btn">🎵 خدا رو چه دیدی...</button>
+        <button id="musicBtn2" class="music-btn">🎵 من باد می‌شم...</button>
     </div>
 
-
-    <div id="letterPage" class="letter-page">
-
-        <h2 id="letterTitle"></h2>
-
-        <div id="letterText"></div>
-
-
-        <button onclick="back()">
-            بازگشت به نامه‌ها
-        </button>
-
-    </div>
-
-
-</div>
-
-<audio id="bgMusic" loop>
-
-    <source src="music/music.mp3" type="audio/mpeg">
-
-</audio>
-
-
-<button id="musicBtn">
-🎵 پخش موسیقی
-</button>
-
-<div id="poemsPage" class="letter-page">
-
-<h2>
-دفتر اشعار تقدیمی ✒️
-</h2>
-
-
-<div class="poems">
-
-
-<button onclick="openPoem(1)">
-شعر اول
-</button>
-
-
-<button onclick="openPoem(2)">
-شعر دوم
-</button>
-
-
-<button onclick="openPoem(3)">
-شعر سوم
-</button>
-
-
-</div>
-
-
-<button onclick="backPoems()">
-بازگشت
-</button>
-
-
-</div>
-
-
-
-<div id="poemPage" class="letter-page">
-
-
-<h2 id="poemTitle"></h2>
-
-
-<div id="poemText"></div>
-
-
-
-<button onclick="backToPoems()">
-بازگشت به اشعار
-</button>
-
-
-</div>
-<div id="finalPage" class="letter-page">
-
-<h2>
-حرف آخر...
-</h2>
-
-
-<div id="finalText">
-
-سلام نسا...
-
-اگر تا اینجا همراه من بودی،
-یعنی به تمام حرف‌هایی که مدت‌هاست توی دلم مونده فرصت شنیده شدن دادی.
-
-من این نامه‌ها رو ننوشتم تا تو رو مجبور به چیزی کنم،
-فقط خواستم بخشی از حقیقت قلبمو با تو قسمت کنم.
-
-از اینجا به بعد،
-انتخاب با توعه.
-
-هر تصمیمی که بگیری،
-من با تمام وجودم بهش احترام می‌گذارم.
-
-مهم‌تر از هر چیزی برای من اینه که تو آروم،
-خوشحال و موفق باشی
-جوری که در پایان به تمام چیزهایی که آرزو داری برسی.
-
-اگر روزی مسیرمون یکی شد،
-برای من زیباترین اتفاق ممکنه هستش و تا ابد برایت زندگی رو خواهم ساخت.
-
-و اگر ...،
-باز هم از ته قلبم برات بهترین‌ها رو می‌خوام.
-
-ممنونم از تحملت بهترین قصه‌ی تمامِ زندگیِ حسین، مرسی زیباترین فصل عمرم...
-
-❤️
-
-</div>
-
-
-<button onclick="backFinal()">
-بازگشت به نامه‌ها
-</button>
-
-<div id="voicePage" class="letter-page">
-
-<h2>
-صدایی برای تو...
-🎧
-</h2>
-
-
-<audio controls>
-
-<source src="voice.mp3" type="audio/mpeg">
-</audio>
-
-
-<button onclick="backVoice()">
-بازگشت
-</button>
-
-</div>
-<script src="letters.js"></script>
-<script src="script.js"></script>
+    <div class="container">
+
+        <!-- صفحه اصلی -->
+        <div id="intro">
+            <h1>برای نسا ❤️</h1>
+            <p>
+                بخوان شیرین‌ترین بهانه‌ام، باید بشنوی و بدانی که تا چه میزان معنای عشقی...
+                <br>
+            </p>
+            <button onclick="openVoice()">🎧 صدای تقدیمی</button>
+            <button onclick="openLetters()">💌 نامه‌ها</button>
+            <button onclick="openPoems()">✒️ اشعار تقدیمی</button>
+            <button onclick="openFinal()">❤️ وقتی همه نامه‌ها را خواندی</button>
+        </div>
+
+        <div id="transition">
+            <h2>صدایم بزن، که شاید زمستان من سر آید...</h2>
+        </div>
+
+        <!-- لیست نامه‌ها -->
+        <div id="letters" class="letters" style="display:none;">
+            <h1>نامه‌های من برای نسا ❤️</h1>
+            <button onclick="openLetter(1)">اصالت عشق من</button>
+            <button onclick="openLetter(2)">وقتی جهان خسته‌ات کرد</button>
+            <button onclick="openLetter(3)">اگر خواستی که بمانی</button>
+            <button onclick="openLetter(4)">آن هنگام که صدای قلبم را بشنوی</button>
+            <button onclick="openLetter(5)">آنچه از جانم برآید</button>
+            <button onclick="openLetter(6)">آخرین دفاع و ایستادگی این عاشق</button>
+            
+            <button onclick="backToIntro()" style="margin-top: 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);">بازگشت به صفحه اصلی</button>
+        </div>
+
+        <!-- صفحه خواندن یک نامه -->
+        <div id="letterPage" class="letter-page">
+            <h2 id="letterTitle"></h2>
+            <div id="letterText"></div>
+            <button onclick="back()">بازگشت به نامه‌ها</button>
+        </div>
+
+        <!-- لیست اشعار -->
+        <div id="poemsPage" class="letter-page">
+            <h2>دفتر اشعار تقدیمی ✒️</h2>
+            <div class="poems">
+                <button onclick="openPoem(1)">شعر اول</button>
+                <button onclick="openPoem(2)">شعر دوم</button>
+                <button onclick="openPoem(3)">شعر سوم</button>
+            </div>
+            <button onclick="backPoems()">بازگشت به صفحه اصلی</button>
+        </div>
+
+        <!-- صفحه خواندن یک شعر -->
+        <div id="poemPage" class="letter-page">
+            <h2 id="poemTitle"></h2>
+            <div id="poemText"></div>
+            <button onclick="backToPoems()">بازگشت به اشعار</button>
+        </div>
+
+        <!-- حرف آخر -->
+        <div id="finalPage" class="letter-page">
+            <h2>حرف آخر...</h2>
+            <div id="finalText">
+                سلام نسا...
+                <br><br>
+                اگر تا اینجا همراه من بودی،<br>
+                یعنی به تمام حرف‌هایی که مدت‌هاست توی دلم مونده فرصت شنیده شدن دادی.<br><br>
+                من این نامه‌ها رو ننوشتم تا تو رو مجبور به چیزی کنم،<br>
+                فقط خواستم بخشی از حقیقت قلبمو با تو قسمت کنم.<br><br>
+                از اینجا به بعد،<br>
+                انتخاب با توعه.<br><br>
+                هر تصمیمی که بگیری،<br>
+                من با تمام وجودم بهش احترام می‌گذارم.<br><br>
+                مهم‌تر از هر چیزی برای من اینه که تو آروم،<br>
+خوشحال و موفق باشی<br>
+                جوری که در پایان به تمام چیزهایی که آرزو داری برسی.<br><br>
+                اگر روزی مسیرمون یکی شد،<br>
+                برای من زیباترین اتفاق ممکنه هستش و تا ابد برایت زندگی رو خواهم ساخت.<br><br>
+                و اگر ...،<br>
+                باز هم از ته قلبم برات بهترین‌ها رو می‌خوام.<br><br>
+                ممنونم از تحملت بهترین قصه‌ی تمامِ زندگیِ حسین، مرسی زیباترین فصل عمرم... ❤️
+            </div>
+            <button onclick="backFinal()">بازگشت به صفحه اصلی</button>
+        </div> 
+
+        <!-- صفحه صدای تقدیمی -->
+        <div id="voicePage" class="letter-page">
+            <h2>صدایی برای تو... 🎧</h2>
+            <audio controls>
+                <source src="voice.mp3" type="audio/mpeg">
+            </audio>
+            <br>
+            <button onclick="backVoice()" style="margin-top: 20px;">بازگشت به صفحه اصلی</button>
+        </div>
+
+    </div> 
+
+    <script src="letters.js"></script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>
