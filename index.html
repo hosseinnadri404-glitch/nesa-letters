@@ -29,13 +29,16 @@
 <br>
 </p>
 
+<button onclick="openVoice()">
+🎧 مقدمه‌ای برای آغاز
+</button>
+
 <button onclick="enterLetters()">
 ورود به نامه‌ها
 </button>
 <button onclick="openPoems()">
 اشعار تقدیمی ✒️
 </button>
-
 </div>
 
 <div id="transition">
@@ -213,3 +216,26 @@
 </body>
 
 </html>
+
+<div id="voicePage" class="letter-page">
+
+<h2>
+صدایی برای تو...
+🎧
+</h2>
+
+
+<audio controls>
+
+<source src="voice.ogg" type="audio/ogg">
+
+مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+
+</audio>
+
+
+<button onclick="backVoice()">
+بازگشت
+</button>
+
+</div>
