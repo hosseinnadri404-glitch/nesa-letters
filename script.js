@@ -324,3 +324,11 @@ function backVoice(){
     document.getElementById("intro").style.display="flex";
 
 }
+
+function startJourney(){
+
+    document.getElementById("intro").style.display="none";
+
+    document.getElementById("transition").style.display="block";
+
+}
