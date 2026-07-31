@@ -309,7 +309,7 @@ function openVoice(){
 
     document.getElementById("intro").style.display="none";
 
-    document.getElementById("letters").style.display="none";
+    document.getElementById("transition").style.display="none";
 
     document.getElementById("voicePage").style.display="block";
 
@@ -322,6 +322,14 @@ function backVoice(){
     document.getElementById("voicePage").style.display="none";
 
     document.getElementById("intro").style.display="flex";
+
+}
+
+function startJourney(){
+
+    document.getElementById("intro").style.display="none";
+
+    document.getElementById("transition").style.display="block";
 
 }
 
